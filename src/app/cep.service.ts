@@ -12,9 +12,7 @@ export class CepService {
   constructor(private http:Http) { }
 
   buscar(cep:string){
-    //this.http.get(`https://viacep.com.br/ws/${cep}/json/`) interpolação de string
     return this.http.get('https://viacep.com.br/ws/'+cep+'/json/')
-    //this.http.get('https://stfangular.atlassian.net/rest/api/2/project')
     .toPromise()
     .then(response => {
       console.log(response);
